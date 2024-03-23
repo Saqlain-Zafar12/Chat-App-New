@@ -46,6 +46,6 @@ io.on('connection', (socket) => {
 });
 
 // Start the Express server
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Express server running at http://localhost:${port}`);
 });
