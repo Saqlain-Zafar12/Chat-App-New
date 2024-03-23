@@ -1,6 +1,5 @@
 // Import required packages
 const express = require('express');
-const mongoose = require('mongoose');
 const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors'); // Import the CORS middleware
@@ -16,7 +15,7 @@ const io = socketIo(server, {
     methods: ["GET", "POST"]
   }
 });
-const port = 3000; // You can use any port number
+const port = process.env.PORT || 5000; // Use environment port or default to 5000
 
 // Define a simple route
 app.get('/', (req, res) => {
@@ -46,6 +45,6 @@ io.on('connection', (socket) => {
 });
 
 // Start the Express server
-app.listen(port, () => {
-  console.log(`Express server running at http://localhost:${port}`);
+server.listen(port, () => {
+  console.log(`Express server running on port ${port}`);
 });
