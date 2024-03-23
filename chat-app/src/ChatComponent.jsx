@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from 'axios'; // Import axios to make HTTP requests
 
 // Replace with your actual ngrok URL (ensure tunnel is active)
-const socket = io('http://localhost:5000/');
+const socket = io('https://chat-app-new-api.vercel.app/');
 
 const ChatComponent = () => {
   const [message, setMessage] = useState('');
@@ -19,7 +19,7 @@ const ChatComponent = () => {
       setError(null); // Clear previous errors
 
       try {
-        const response = await axios.get('http://localhost:5000/api/data');
+        const response = await axios.get('https://chat-app-new-api.vercel.app/api/data');
         setData(response.data);
         console.log("response.data :", response.data);
       } catch (error) {
