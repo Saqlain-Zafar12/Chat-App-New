@@ -11,7 +11,7 @@ app.use(cors()); // Use the CORS middleware to allow all origins
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://chat-app-new-frontend-w.vercel.app", // Set CORS origin to allow all origins
+    origin: "*", // Set CORS origin to allow all origins
     methods: ["GET", "POST"]
   }
 });
